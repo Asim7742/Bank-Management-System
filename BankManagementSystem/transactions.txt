@@ -1,3 +1,0 @@
-46
-Account: 101 | Type: Deposit | Amount: 5000.0
-Account: 101 | Type: Deposit | Amount: 1000.0
