@@ -1,0 +1,8 @@
+Account: 101 | Type: Deposit | Amount: 5000.0
+Account: 101 | Type: Deposit | Amount: 5000.0
+Account: 102 | Type: Deposit | Amount: 4000.0
+Account: 102 | Type: Deposit | Amount: 4000.0
+Account: 103 | Type: Deposit | Amount: 3000.0
+Account: 103 | Type: Deposit | Amount: 3000.0
+Account: 104 | Type: Deposit | Amount: 6000.0
+Account: 104 | Type: Deposit | Amount: 6000.0
