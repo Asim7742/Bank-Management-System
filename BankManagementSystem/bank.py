@@ -23,6 +23,27 @@ class Account:
 
     def display(self):
         print(f"Account No: {self.acc_number} | Name: {self.name} | Balance: {self.__balance}")
+class SavingsAccount(Account):
+    def __init__(self, acc_number, name, balance=0):
+        super().__init__(acc_number, name, balance)
+        self.interest_rate = 0.05
+
+    def add_interest(self):
+        interest = self.get_balance() * self.interest_rate
+        self.deposit(interest)
+
+
+class CurrentAccount(Account):
+    def __init__(self, acc_number, name, balance=0):
+        super().__init__(acc_number, name, balance)
+        self.overdraft_limit = 1000
+
+    def withdraw(self, amount):
+        if amount <= 0:
+            raise ValueError("Withdraw amount positive hona chahiye")
+        if amount > self.get_balance() + self.overdraft_limit:
+            raise ValueError("Overdraft limit exceeded")
+        self._Account__balance -= amount
 
 
 def save_account(account):
@@ -72,7 +93,16 @@ def main():
                     print("Error: Account number already exists!")
                     continue
                 name = input("Enter account holder name: ")
-                new_acc = Account(acc_number, name)
+                acc_type = input("Account type (S for Savings / C for Current): ").upper()
+
+                if acc_type == "S":
+                    new_acc = SavingsAccount(acc_number, name)
+                elif acc_type == "C":
+                    new_acc = CurrentAccount(acc_number, name)
+                else:
+                    print("Invalid account type! Defaulting to regular Account.")
+                    new_acc = Account(acc_number, name)
+
                 accounts[acc_number] = new_acc
                 save_account(new_acc)
                 print("Account created successfully!")

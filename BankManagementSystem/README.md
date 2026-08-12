@@ -22,6 +22,6 @@ cd BankManagementSystem
 3. Run the program:
 python bank.py
 ## Main File
-- `bank.py` — contains all program logic
-- `accounts.txt` — stores account records
-- `transactions.txt` — stores transaction history
+- `bank.py`: contains all program logic
+- `accounts.txt`: stores account records
+- `transactions.txt`: stores transaction history
